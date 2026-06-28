@@ -44,25 +44,31 @@ export default function About() {
               designed to transform how healthcare operators and clinicians work.
             </p>
             <p>
-              My career spans 5.5+ years across enterprise software engineering, data engineering, business intelligence
-              (Pentaho BI), DevOps, and full-stack development. At Tech Mahindra, I delivered the{" "}
-              <span className="text-[#E6EDF3] font-medium">LIC ePGS Project</span> — building 400+ Pentaho reports, 50+
-              CDE dashboards, and an automated payments system handling three major Indian banks.
+              My career spans 5.5+ years across the full engineering lifecycle — from{" "}
+              <span className="text-[#E8F0FF] font-medium">requirement gathering and SRS authoring</span> through system
+              design, solution architecture, full-stack delivery, and platform operations. I&apos;ve owned complete SDLC
+              end-to-end on projects at national scale.
+            </p>
+            <p>
+              At Tech Mahindra, I was effectively{" "}
+              <span className="text-[#00BFA5] font-medium">forward-deployed with LIC India and three major banks</span>{" "}
+              — embedded on-site to extract domain logic, then architected and built the national payments platform
+              (~300,000 payments/day), full-stack applications, and BI system (400+ reports) from the ground up.
             </p>
             <p>
               I recently earned my{" "}
-              <span className="text-[#E6EDF3] font-medium">Master&apos;s in IT (Software Development) from QUT</span>{" "}
+              <span className="text-[#E8F0FF] font-medium">Master&apos;s in IT (Software Development) from QUT</span>{" "}
               with Dean&apos;s Commendation, and hold{" "}
               <span className="text-[#00BFA5] font-medium">Anthropic Claude certifications</span> on both Google Cloud
               Vertex AI and Amazon Bedrock — reflecting my commitment to AI engineering at the frontier.
             </p>
             <p>
-              Beyond the keyboard, I bring the same energy to cricket, carrom, and guitar as I do to server logs and
-              architecture decisions. I have 16 LinkedIn recommendations and an IEEE publication to my name.
+              Beyond the keyboard, I bring the same energy to cricket, carrom, and guitar as I do to architecture
+              decisions. 16 LinkedIn recommendations and an IEEE publication.
             </p>
 
             <div className="flex flex-wrap gap-2 pt-2">
-              {["Healthcare Tech", "AI Engineering", "Enterprise BI", "AWS Cloud", "Full Stack", "Team Leadership"].map((tag) => (
+              {["Solution Architect", "Technical Delivery Lead", "Forward Deployed AI", "Healthcare Tech", "AI Engineering", "Enterprise BI", "AWS Cloud", "Full Stack"].map((tag) => (
                 <span key={tag} className="badge-skill">{tag}</span>
               ))}
             </div>

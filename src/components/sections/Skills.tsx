@@ -6,7 +6,12 @@ const skillGroups = [
   {
     title: "Leadership & Delivery",
     color: "#00BFA5",
-    skills: ["Full SDLC", "Agile / Scrum", "Sprint Planning", "CTO Leadership", "Stakeholder Management", "Technology Strategy", "Team Building", "ITIL / CMR / CAB"],
+    skills: ["CTO Leadership", "Technology Strategy", "Team Building", "Stakeholder Management", "Agile / Scrum", "Sprint Planning", "ITIL / CMR / CAB", "Forward Deployed Delivery"],
+  },
+  {
+    title: "Solution Architecture & SDLC",
+    color: "#06B6D4",
+    skills: ["Solution Architecture", "Requirement Gathering", "SRS Authoring", "Design Documents", "Full SDLC Ownership", "System Integration Design", "Technical Delivery Lead", "Agentic SDLC (ASDLC)"],
   },
   {
     title: "AI & Cloud",
@@ -41,9 +46,9 @@ const MARQUEE_ROW_1 = [
   "Azure", "Terraform", "MongoDB", "CI/CD", "React Native",
 ];
 const MARQUEE_ROW_2 = [
-  "CTO", "Tech Lead", "SDLC", "Agile", "Red Hat", "OpenShift", "Jenkins",
-  "Ansible", "Tableau", "Power BI", "Angular", "REST APIs", "GraphQL",
-  "Microservices", "ETL", "Data Engineering", "AI Engineering", "Healthcare Tech",
+  "CTO", "Solution Architect", "Technical Delivery Lead", "Forward Deployed", "SRS Authoring",
+  "SDLC", "Agile", "Red Hat", "OpenShift", "Jenkins", "Ansible", "Tableau",
+  "Power BI", "Angular", "REST APIs", "Microservices", "ETL", "Healthcare Tech",
 ];
 
 export default function Skills() {
