@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { CountUp } from "@/components/ui/CountUp";
 import { useEffect, useRef, useState } from "react";
 
-const ROLES = ["CTO @ VPTech", "AI Engineer", "Software Architect", "Data Engineer", "Tech Leader"];
+const ROLES = ["CTO @ VPTech", "Forward Deployed AI Engineer", "AI Engineer", "Software Architect", "Data Engineer", "Tech Leader"];
 
 /* ─── Character stagger reveal ─── */
 function CharStagger({

@@ -8,12 +8,17 @@ import { useRef, useState } from "react";
 const professional = [
   {
     title: "EliteMx",
-    subtitle: "Healthcare Technology Platform · CTO @ VPTech",
-    role: "Chief Technology Officer",
+    subtitle: "AI-Native Healthcare Platform · CTO @ VPTech",
+    role: "Founding Engineer → Chief Technology Officer",
     description:
-      "Leading the full product lifecycle as CTO — architecture, engineering, team leadership, and stakeholder alignment. EliteMx is a pre-launch platform designed to transform how healthcare operators and clinicians manage their workflows, shaped by direct feedback from the healthcare community.",
-    impact: ["Full SDLC ownership from Day 1", "Cloud-native architecture on AWS", "Built and leading the engineering team", "Collaborating directly with healthcare operators"],
-    tags: ["CTO", "Healthcare", "AWS", "SDLC", "Product Strategy", "Team Leadership"],
+      "Promoted from Founding Engineer to CTO within ~6 months. Built the entire product full-stack on TypeScript — Next.js / React frontend, Node.js (Fastify + oRPC) backend, PostgreSQL + Drizzle, across ~150 typed API procedures and 30+ tables. Embedded directly with clinicians and operators at the Digital Health Festival to learn how care work is actually done, then built AI that completes the work: an ambient voice scribe that turns a consultation into a structured clinical note, and a patient agent that answers from the record and drafts letters under human approval.",
+    impact: [
+      "Multi-agent system on LangGraph + AWS Bedrock with human-in-the-loop on every write",
+      "FHIR R4 + SMART on FHIR auth server — 29 resource types, AU Core compliant",
+      "10 AWS CDK stacks deployed via 16-workflow GitHub Actions pipeline with OIDC",
+      "Cut cloud cost ~75% migrating to Bedrock AgentCore + pgvector consolidation",
+    ],
+    tags: ["TypeScript", "Next.js", "LangGraph", "AWS Bedrock", "FHIR", "PostgreSQL", "React Native", "Multi-Agent AI"],
     status: "In Development",
     statusColor: "#00BFA5",
     link: "https://elitemx.com.au",
@@ -22,13 +27,18 @@ const professional = [
     color: "#00BFA5",
   },
   {
-    title: "LIC ePGS — Enterprise BI Platform",
-    subtitle: "Life Insurance Corporation of India · Tech Mahindra",
-    role: "Software Engineer → Senior Engineer",
+    title: "LIC ePGS — National Payments & BI Platform",
+    subtitle: "Life Insurance Corporation of India · Tech Mahindra · 5 Years",
+    role: "Software Engineer → Integration Technical Lead",
     description:
-      "Led the design and delivery of an enterprise Business Intelligence platform for LIC India — one of the largest financial institutions in Asia. 400+ Pentaho reports, 50+ CDE dashboards including the Chairman Dashboard. Integrated payment systems across three major banks.",
-    impact: ["400+ Pentaho reports delivered", "50+ CDE dashboards including Chairman level", "3-bank payment system integration", "5.5 years of iterative delivery"],
-    tags: ["Pentaho PDI", "PRD", "CDE", "Oracle SQL", "PL/SQL", "ETL", "Jenkins", "Ansible"],
+      "Forward-deployed for 5+ years with LIC India and three major banks — embedded on-site to extract domain logic, then built the integrations, automations, and platform that now processes ~300,000 payments daily. Far beyond BI: built the national payments infrastructure, full-stack applications (Angular, Java / Spring Boot, Oracle), government-scheme batch processes integrated with external agencies, and the complete Pentaho BI platform — all owned through Dev, UAT, QA, Production, and DR.",
+    impact: [
+      "~300,000 payments processed daily across 3 major banks",
+      "~15,000 annuitants automated via the Annuity Extraction System",
+      "400+ Pentaho reports + 50+ CDE dashboards incl. Chairman Dashboard",
+      "10-minute disaster recovery objective — owned DR procedures & drills",
+    ],
+    tags: ["Angular", "Java", "Spring Boot", "Oracle SQL", "Pentaho PDI", "Red Hat", "OpenShift", "Jenkins", "ITIL"],
     status: "Delivered",
     statusColor: "#3B82F6",
     link: null,

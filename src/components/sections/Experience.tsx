@@ -5,66 +5,66 @@ const experiences = [
   {
     role: "Chief Technology Officer",
     company: "VPTech",
-    project: "EliteMx Healthcare Platform",
+    project: "EliteMx — AI-Native Healthcare Platform",
     period: "Feb 2026 – Present",
     location: "Gold Coast, QLD · Hybrid",
     type: "Full-time",
     color: "#00BFA5",
     bullets: [
-      "Leading technology strategy and engineering for EliteMx — a pre-launch healthcare technology platform.",
-      "Engaged with the healthcare-tech community at Digital Health Festival; feedback loops with clinicians and healthcare operators.",
-      "Owning full technology stack decisions, architecture, team building, and product-tech alignment.",
+      "Promoted from Founding Engineer to CTO within ~6 months — own product and platform end-to-end while staying hands-on in the code.",
+      "Built an ambient voice scribe (consultation → structured clinical note) and a patient agent that answers from the record and drafts letters under human-in-the-loop approval.",
+      "Architected a multi-agent system on LangGraph + AWS Bedrock with agentic tool-based retrieval; built FHIR R4 + SMART on FHIR auth server (29 resource types, AU Core).",
+      "Run 10 CDK TypeScript stacks deployed via a 16-workflow GitHub Actions pipeline with OIDC and ephemeral per-PR environments — cut cloud cost ~75% via Bedrock AgentCore migration.",
     ],
-    tags: ["CTO", "Healthcare Tech", "Product Leadership", "Architecture", "AWS"],
+    tags: ["TypeScript", "Next.js", "LangGraph", "AWS Bedrock", "FHIR", "PostgreSQL", "Multi-Agent AI", "CDK"],
   },
   {
     role: "Founding Engineer",
     company: "VPTech",
-    project: "EliteMx Healthcare Platform",
+    project: "EliteMx — AI-Native Healthcare Platform",
     period: "Aug 2025 – Jan 2026",
     location: "Gold Coast, QLD · Hybrid",
     type: "Full-time",
     color: "#3B82F6",
     bullets: [
-      "Joined as a founding-team engineer to build the EliteMx platform from the ground up.",
-      "Designed and implemented the core platform architecture and initial engineering systems.",
-      "Established development practices, infrastructure, and deployment pipelines from zero.",
+      "Joined as founding engineer — built the full product stack from zero: Next.js / React frontend, Node.js (Fastify + oRPC) backend, PostgreSQL + Drizzle across ~150 typed API procedures and 30+ tables.",
+      "Built the original clinical AI as four agents (agent-to-agent architecture) with a vector RAG pipeline, then evolved into a unified multi-agent system.",
+      "Designed and built an Agentic SDLC on Claude Code (custom skills, hooks, MCP servers) that shortened the spec-to-PR cycle and authored SRS / SDLC documents as the team's source of truth.",
+      "Designed and prototyped the EliteMx mobile experience in React Native — iterated through 13+ prototype versions.",
     ],
-    tags: ["Founding Engineer", "AWS", "SDLC", "Platform Engineering"],
+    tags: ["Founding Engineer", "TypeScript", "React Native", "Claude Code", "AWS", "Agentic SDLC"],
   },
   {
-    role: "Senior Software Engineer · Tech Lead",
+    role: "Senior Software Engineer · Integration Technical Lead",
     company: "Tech Mahindra",
-    project: "LIC ePGS — Integration Lead",
+    project: "LIC ePGS — Forward Deployed",
     period: "Jul 2023 – Aug 2024",
-    location: "Remote · India",
+    location: "Remote / On-site · India",
     type: "Contract (VIS Band)",
     color: "#F0B429",
     bullets: [
-      "Led end-to-end SDLC for integration work — planning to deployment across all phases.",
-      "Spearheaded Pentaho ETL development, PRD reporting, and real-time CDE dashboards.",
-      "Established and managed CI/CD pipelines (Jenkins, Ansible, Bitbucket) for Pentaho infrastructure.",
-      "Conducted requirement gathering, engaged directly with LIC and three major bank stakeholders.",
-      "Designed SFTP automation scripts using GAMFT for secure file transfers.",
+      "Effectively forward-deployed: worked on-site with LIC India and three major banks, engaged stakeholders directly to extract domain logic, and built integrations that removed manual steps from a national payments workflow.",
+      "Owned API integrations, infrastructure setup, IP whitelisting, and network debugging enabling secure transactions across LIC systems and three banks.",
+      "Led the integration team across full SDLC; coordinated distributed teams remotely to deliver critical milestones on schedule.",
+      "Established CI/CD pipelines (Jenkins, Ansible, Bitbucket) and SFTP automation (GAMFT) for reliable, auditable delivery.",
     ],
-    tags: ["Pentaho PDI/PRD/CDE", "Jenkins", "Oracle SQL", "CI/CD", "Leadership"],
+    tags: ["Integration Lead", "Forward Deployed", "Jenkins", "Ansible", "Oracle SQL", "GAMFT", "ITIL"],
   },
   {
     role: "Software Engineer",
     company: "Tech Mahindra",
-    project: "LIC ePGS — Full Stack & BI",
+    project: "LIC ePGS — Full Stack, Payments & BI",
     period: "Sep 2019 – Feb 2023",
     location: "Mumbai, India",
     type: "Full-time",
     color: "#A855F7",
     bullets: [
-      "Delivered full SDLC for enterprise applications: SRS authoring, design, development, testing, integration.",
-      "Built 400+ Pentaho PDI ETL pipelines, 50+ PRD reports, Chairman Dashboard for LIC.",
-      "Developed full-stack applications: Angular + Java Spring Boot over Oracle SQL databases.",
-      "Led Annuity Extraction System — automated fortnightly, monthly, quarterly payments to annuitants.",
-      "Managed AWS Console, EC2, Red Hat OCP, Nagios monitoring across Dev/SIT/UAT/QA/Prod/DR.",
+      "Built the LIC Payments Module across three banks (~300,000 payments processed daily) and the Annuity Extraction System automating recurring payments for ~15,000 annuitants.",
+      "Built full-stack applications (Angular, Java / Spring Boot, Oracle) and 400+ reports / 50+ dashboards including the Chairman Dashboard for LIC.",
+      "Set up Pentaho BI servers on Red Hat and OpenShift (OCP); owned disaster recovery with a ~10-minute recovery objective — ran DR procedures and drills under ITIL change management.",
+      "Delivered complete SDLC across Dev, SIT, UAT, QA, Production, and DR on both AWS and Red Hat.",
     ],
-    tags: ["Java", "Angular", "Spring Boot", "Pentaho", "Oracle SQL", "AWS", "Red Hat"],
+    tags: ["Angular", "Java", "Spring Boot", "Pentaho", "Oracle SQL", "Red Hat", "OpenShift", "AWS", "DR"],
   },
 ];
 
@@ -118,7 +118,7 @@ export default function Experience() {
               >
                 {/* Timeline dot */}
                 <div
-                  className="absolute -left-[29px] sm:-left-[33px] top-5 w-4 h-4 rounded-full border-2 border-[#080C10]"
+                  className="absolute -left-[29px] sm:-left-[33px] top-5 w-4 h-4 rounded-full border-2 border-[#080E1A]"
                   style={{ backgroundColor: exp.color }}
                 />
                 <div className="card-glow rounded-xl p-5 sm:p-6 ml-2">
