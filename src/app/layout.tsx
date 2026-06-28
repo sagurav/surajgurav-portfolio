@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora, Figtree } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/layout/SmoothScroll";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -48,7 +49,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${sora.variable} ${figtree.variable} dark`} suppressHydrationWarning>
       <body className="min-h-dvh flex flex-col antialiased">
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

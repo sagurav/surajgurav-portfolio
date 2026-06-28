@@ -1,5 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SpotlightCursor from "@/components/ui/SpotlightCursor";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Experience from "@/components/sections/Experience";
@@ -11,6 +12,7 @@ import Contact from "@/components/sections/Contact";
 export default function Home() {
   return (
     <>
+      <SpotlightCursor />
       <Navbar />
       <main>
         <Hero />

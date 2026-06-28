@@ -3,119 +3,131 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const links = [
-  { label: "About", href: "#about" },
+const NAV_LINKS = [
+  { label: "About",      href: "#about" },
   { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Awards", href: "#awards" },
-  { label: "Contact", href: "#contact" },
+  { label: "Skills",     href: "#skills" },
+  { label: "Projects",   href: "#projects" },
+  { label: "Awards",     href: "#awards" },
+  { label: "Contact",    href: "#contact" },
 ];
 
+function scrollTo(id: string) {
+  document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+}
+
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [active, setActive] = useState("");
+  const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [lastY, setLastY] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const handleNav = (href: string) => {
-    setActive(href);
-    setMenuOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-  };
+    const handler = () => {
+      const y = window.scrollY;
+      setScrolled(y > 20);
+      if (y > 100) {
+        setHidden(y > lastY && y > 200);
+      } else {
+        setHidden(false);
+      }
+      setLastY(y);
+    };
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, [lastY]);
 
   return (
-    <>
-      <motion.header
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-[#080C10]/90 backdrop-blur-xl border-b border-[#21262D]"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-2 group cursor-pointer"
-          >
-            <div className="w-8 h-8 rounded-lg bg-[#00BFA5] flex items-center justify-center text-[#080C10] font-bold text-sm font-[family-name:var(--font-sora)]">
-              SG
-            </div>
-            <span className="text-[#E6EDF3] font-semibold font-[family-name:var(--font-sora)] hidden sm:block group-hover:text-[#00BFA5] transition-colors duration-200">
-              Suraj Gurav
-            </span>
-          </button>
+    <motion.header
+      animate={{ y: hidden ? "-110%" : "0%" }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#080E1A]/90 backdrop-blur-xl border-b border-[#1C2B3E]/60 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        {/* Logo */}
+        <a
+          href="#home"
+          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+          className="flex items-center gap-2.5 group"
+        >
+          <div className="w-8 h-8 rounded-lg bg-[#00BFA5] flex items-center justify-center text-[#080E1A] font-bold text-sm font-[family-name:var(--font-sora)] group-hover:shadow-[0_0_18px_rgba(0,191,165,0.55)] transition-shadow duration-300">
+            SG
+          </div>
+          <span className="text-[#E8F0FF] font-semibold text-sm font-[family-name:var(--font-sora)] hidden sm:block group-hover:text-[#00BFA5] transition-colors duration-200">
+            Suraj Gurav
+          </span>
+        </a>
 
-          <nav className="hidden md:flex items-center gap-1">
-            {links.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => handleNav(link.href)}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer ${
-                  active === link.href
-                    ? "text-[#00BFA5] bg-[rgba(0,191,165,0.08)]"
-                    : "text-[#8B949E] hover:text-[#E6EDF3] hover:bg-[#161B22]"
-                }`}
-              >
-                {link.label}
-              </button>
-            ))}
-            <a
-              href="mailto:sagurav0104@gmail.com"
-              className="ml-2 px-4 py-2 rounded-lg text-sm font-semibold bg-[#00BFA5] text-[#080C10] hover:bg-[#00D4B8] transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,191,165,0.3)]"
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-1">
+          {NAV_LINKS.map((link) => (
+            <button
+              key={link.label}
+              onClick={() => scrollTo(link.href)}
+              className="px-3 py-2 rounded-lg text-sm text-[#8892A4] hover:text-[#E8F0FF] hover:bg-[rgba(255,255,255,0.04)] transition-all duration-200 font-medium cursor-pointer"
             >
-              Hire Me
-            </a>
-          </nav>
-
-          <button
-            className="md:hidden p-2 rounded-lg text-[#8B949E] hover:text-[#E6EDF3] hover:bg-[#161B22] transition-colors duration-200 cursor-pointer"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+              {link.label}
+            </button>
+          ))}
         </div>
-      </motion.header>
 
+        {/* CTA */}
+        <div className="hidden md:flex items-center">
+          <a
+            href="mailto:sagurav0104@gmail.com"
+            className="px-4 py-2 rounded-xl text-sm font-semibold border border-[#00BFA5] text-[#00BFA5] hover:bg-[#00BFA5] hover:text-[#080E1A] transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,191,165,0.35)]"
+          >
+            Hire Me
+          </a>
+        </div>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg border border-[#1C2B3E] text-[#8892A4] hover:text-[#E8F0FF] transition-colors"
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? <X size={18} /> : <Menu size={18} />}
+        </button>
+      </nav>
+
+      {/* Mobile menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="fixed top-16 left-0 right-0 z-40 bg-[#0D1117]/95 backdrop-blur-xl border-b border-[#21262D] md:hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden overflow-hidden bg-[#080E1A]/95 backdrop-blur-xl border-b border-[#1C2B3E]"
           >
-            <nav className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1">
-              {links.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => handleNav(link.href)}
-                  className="px-4 py-3 rounded-lg text-left text-[#8B949E] hover:text-[#E6EDF3] hover:bg-[#161B22] transition-all duration-200 font-medium cursor-pointer"
+            <div className="px-4 py-4 flex flex-col gap-1">
+              {NAV_LINKS.map((link, i) => (
+                <motion.button
+                  key={link.label}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.04 }}
+                  onClick={() => { scrollTo(link.href); setMenuOpen(false); }}
+                  className="text-left px-3 py-2.5 rounded-lg text-sm text-[#8892A4] hover:text-[#E8F0FF] hover:bg-[rgba(255,255,255,0.05)] transition-all duration-200 cursor-pointer"
                 >
                   {link.label}
-                </button>
+                </motion.button>
               ))}
               <a
                 href="mailto:sagurav0104@gmail.com"
-                className="mt-2 px-4 py-3 rounded-lg text-center font-semibold bg-[#00BFA5] text-[#080C10] hover:bg-[#00D4B8] transition-colors duration-200"
-                onClick={() => setMenuOpen(false)}
+                className="mt-2 px-4 py-3 rounded-xl text-sm font-semibold text-center border border-[#00BFA5] text-[#00BFA5] hover:bg-[#00BFA5] hover:text-[#080E1A] transition-all duration-200"
               >
                 Hire Me
               </a>
-            </nav>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </motion.header>
   );
 }
