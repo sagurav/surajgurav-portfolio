@@ -14,12 +14,12 @@ interface NodeDef {
 }
 
 const NODES: NodeDef[] = [
-  { id: "ai",      label: "AI / ML",    angle: 0,   color: "#00BFA5", abbr: "AI"  },
-  { id: "hc",      label: "Healthcare", angle: 60,  color: "#EC4899", abbr: "HC"  },
-  { id: "cloud",   label: "AWS Cloud",  angle: 120, color: "#3B82F6", abbr: "AWS" },
-  { id: "fs",      label: "Full Stack", angle: 180, color: "#A855F7", abbr: "FS"  },
-  { id: "bi",      label: "Data & BI",  angle: 240, color: "#F0B429", abbr: "BI"  },
-  { id: "fintech", label: "FinTech",    angle: 300, color: "#10B981", abbr: "FIN" },
+  { id: "ai",      label: "AI Engineering",  angle: 0,   color: "#00BFA5", abbr: "AI"   },
+  { id: "hc",      label: "Healthcare",      angle: 60,  color: "#EC4899", abbr: "HC"   },
+  { id: "arch",    label: "Solution Arch.",  angle: 120, color: "#06B6D4", abbr: "ARCH" },
+  { id: "fs",      label: "Full Stack",      angle: 180, color: "#A855F7", abbr: "FS"   },
+  { id: "fintech", label: "FinTech / BFSI",  angle: 240, color: "#10B981", abbr: "FIN"  },
+  { id: "fwd",     label: "Fwd. Deployed",   angle: 300, color: "#3B82F6", abbr: "FWD"  },
 ];
 
 function nodePos(angleDeg: number, r = RING_R) {
