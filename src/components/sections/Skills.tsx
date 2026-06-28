@@ -48,7 +48,7 @@ const MARQUEE_ROW_2 = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 section-dark">
+    <section id="skills" className="py-20 px-4 sm:px-6 section-dark">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

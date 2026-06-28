@@ -277,9 +277,9 @@
     background: linear-gradient(to bottom, #00BFA5, #3B82F6, #1C2B3E);
   }
 
-  /* Section backgrounds alternating */
-  .section-dark  { background: #080E1A; }
-  .section-mid   { background: #0A1220; }
+  /* Section backgrounds — clearly distinct so transitions are visible */
+  .section-dark { background: #080E1A; }
+  .section-mid  { background: #0D1E35; }
 }
 
 @media (prefers-reduced-motion: reduce) {

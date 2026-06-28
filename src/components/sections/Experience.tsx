@@ -87,7 +87,7 @@ const education = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-4 sm:px-6 bg-[#0D1117]">
+    <section id="experience" className="py-20 px-4 sm:px-6 section-mid">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
