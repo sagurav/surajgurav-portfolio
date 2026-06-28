@@ -305,14 +305,14 @@ export default function TechConstellation() {
         <text
           x={CX} y={CY + 12}
           textAnchor="middle"
-          fontSize="6"
+          fontSize="5.5"
           fontWeight="500"
           fontFamily="system-ui, sans-serif"
-          letterSpacing="0.22em"
+          letterSpacing="0.18em"
           fill="#8892A4"
           fillOpacity="0.7"
         >
-          CTO
+          IT PRO
         </text>
       </svg>
     </div>
