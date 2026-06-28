@@ -149,8 +149,8 @@ function MagneticBtn({
 const STATS = [
   { countTo: 5, suffix: ".5+", label: "Years Exp." },
   { countTo: null, display: "CTO", label: "Current Role" },
-  { countTo: 400, suffix: "+", label: "BI Reports" },
-  { countTo: 16, suffix: "", label: "Recommendations" },
+  { countTo: 300, suffix: "K+", label: "Payments / Day" },
+  { countTo: 16, suffix: "", label: "Endorsements" },
 ];
 
 /* ─── Main Hero ─── */

@@ -14,12 +14,13 @@ interface NodeDef {
 }
 
 const NODES: NodeDef[] = [
-  { id: "ai",      label: "AI Engineering",  angle: 0,   color: "#00BFA5", abbr: "AI"   },
-  { id: "hc",      label: "Healthcare",      angle: 60,  color: "#EC4899", abbr: "HC"   },
-  { id: "arch",    label: "Solution Arch.",  angle: 120, color: "#06B6D4", abbr: "ARCH" },
-  { id: "fs",      label: "Full Stack",      angle: 180, color: "#A855F7", abbr: "FS"   },
-  { id: "fintech", label: "FinTech / BFSI",  angle: 240, color: "#10B981", abbr: "FIN"  },
-  { id: "fwd",     label: "Fwd. Deployed",   angle: 300, color: "#3B82F6", abbr: "FWD"  },
+  { id: "ai",      label: "AI Engineering", angle: 0,   color: "#00BFA5", abbr: "AI"   },
+  { id: "hc",      label: "Healthcare",     angle: 51,  color: "#EC4899", abbr: "HC"   },
+  { id: "arch",    label: "Architect",      angle: 103, color: "#06B6D4", abbr: "ARCH" },
+  { id: "fs",      label: "Full Stack",     angle: 154, color: "#A855F7", abbr: "FS"   },
+  { id: "fintech", label: "FinTech / BFSI", angle: 206, color: "#10B981", abbr: "FIN"  },
+  { id: "de",      label: "Data Eng.",      angle: 257, color: "#F0B429", abbr: "DE"   },
+  { id: "fwd",     label: "Fwd. Deployed",  angle: 309, color: "#3B82F6", abbr: "FWD"  },
 ];
 
 function nodePos(angleDeg: number, r = RING_R) {
